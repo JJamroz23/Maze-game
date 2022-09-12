@@ -1,7 +1,7 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cellsHorizontal = 14;
-const cellsVertical = 10;
+const cellsHorizontal = 4;
+const cellsVertical = 3;
 const width = window.innerWidth;
 const height = window.innerHeight * 0.9;
 
@@ -207,6 +207,7 @@ World.add(world, goal);
 const ballRadius = Math.min(unitLengthX, unitLengthY) / 4;
 const ball = Bodies.circle(unitLengthX / 2, unitLengthY / 2, ballRadius, {
   label: "ball",
+  isStatic: true,
   render: {
     fillStyle: "#fcc419",
   },
