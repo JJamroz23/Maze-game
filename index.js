@@ -4,7 +4,6 @@ const cellsHorizontal = 14;
 const cellsVertical = 10;
 const width = window.innerWidth;
 const height = window.innerHeight;
-document.body.style.overflow = "hidden";
 
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
@@ -27,10 +26,34 @@ Runner.run(Runner.create(), engine);
 
 // Walls
 const walls = [
-  Bodies.rectangle(width / 2, 0, width, 2, { isStatic: true }),
-  Bodies.rectangle(width / 2, height, width, 2, { isStatic: true }),
-  Bodies.rectangle(0, height / 2, 2, width, { isStatic: true }),
-  Bodies.rectangle(width, height / 2, 2, height, { isStatic: true }),
+  //Top
+  Bodies.rectangle(width / 2, 0, width, 6, {
+    isStatic: true,
+    render: {
+      fillStyle: "#82c91e",
+    },
+  }),
+  // Bottom
+  Bodies.rectangle(width / 2, height, width, 6, {
+    isStatic: true,
+    render: {
+      fillStyle: "#82c91e",
+    },
+  }),
+  // Left
+  Bodies.rectangle(0, height / 2, 6, width, {
+    isStatic: true,
+    render: {
+      fillStyle: "#82c91e",
+    },
+  }),
+  // Right
+  Bodies.rectangle(width, height / 2, 6, height, {
+    isStatic: true,
+    render: {
+      fillStyle: "#82c91e",
+    },
+  }),
 ];
 World.add(world, walls);
 
@@ -133,7 +156,7 @@ horizontals.forEach((row, rowIndex) => {
         label: "wall",
         isStatic: true,
         render: {
-          fillStyle: "orangered",
+          fillStyle: "#20c997",
         },
       }
     );
@@ -156,7 +179,7 @@ verticals.forEach((row, rowIndex) => {
         label: "wall",
         isStatic: true,
         render: {
-          fillStyle: "orangered",
+          fillStyle: "#20c997",
         },
       }
     );
@@ -174,7 +197,7 @@ const goal = Bodies.rectangle(
     label: "goal",
     isStatic: true,
     render: {
-      fillStyle: "darkgreen",
+      fillStyle: "#1098ad",
     },
   }
 );
@@ -185,7 +208,7 @@ const ballRadius = Math.min(unitLengthX, unitLengthY) / 4;
 const ball = Bodies.circle(unitLengthX / 2, unitLengthY / 2, ballRadius, {
   label: "ball",
   render: {
-    fillStyle: "lightblue",
+    fillStyle: "#fcc419",
   },
 });
 World.add(world, ball);
@@ -194,19 +217,19 @@ World.add(world, ball);
 document.addEventListener("keydown", (event) => {
   const { x, y } = ball.velocity;
   const speedLimit = 15;
-  if (event.keyCode === 87) {
+  if (event.keyCode === 87 || event.keyCode === 38) {
     Body.setVelocity(ball, { x, y: Math.max(y - 5, -speedLimit) });
   }
 
-  if (event.keyCode === 68) {
+  if (event.keyCode === 68 || event.keyCode === 39) {
     Body.setVelocity(ball, { x: Math.min(x + 5, speedLimit), y });
   }
 
-  if (event.keyCode === 83) {
+  if (event.keyCode === 83 || event.keyCode === 40) {
     Body.setVelocity(ball, { x, y: Math.min(y + 5, speedLimit) });
   }
 
-  if (event.keyCode === 65) {
+  if (event.keyCode === 65 || event.keyCode === 37) {
     Body.setVelocity(ball, { x: Math.max(x - 5, -speedLimit), y });
   }
 });
