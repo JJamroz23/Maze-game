@@ -3,7 +3,7 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 const cellsHorizontal = 14;
 const cellsVertical = 10;
 const width = window.innerWidth;
-const height = window.innerHeight;
+const height = window.innerHeight * 0.9;
 
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
@@ -30,28 +30,28 @@ const walls = [
   Bodies.rectangle(width / 2, 0, width, 6, {
     isStatic: true,
     render: {
-      fillStyle: "#82c91e",
+      fillStyle: "#920608",
     },
   }),
   // Bottom
   Bodies.rectangle(width / 2, height, width, 6, {
     isStatic: true,
     render: {
-      fillStyle: "#82c91e",
+      fillStyle: "#5DFC59",
     },
   }),
   // Left
   Bodies.rectangle(0, height / 2, 6, width, {
     isStatic: true,
     render: {
-      fillStyle: "#82c91e",
+      fillStyle: "#920608",
     },
   }),
   // Right
   Bodies.rectangle(width, height / 2, 6, height, {
     isStatic: true,
     render: {
-      fillStyle: "#82c91e",
+      fillStyle: "#5DFC59",
     },
   }),
 ];

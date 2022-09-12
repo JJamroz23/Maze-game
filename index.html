@@ -7,9 +7,29 @@
     <title>Maze application</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- header -->
+    <header class="header">
+      <div class="property-box">
+        <h2>Time left:</h2>
+        <div class="timer">60</div>
+      </div>
+      <div class="property-box">
+        <h2>Score:</h2>
+        <div class="scoreboard">0</div>
+      </div>
+      <div class="property-box">
+        <h2>Level:</h2>
+        <div class="level">1</div>
+      </div>
+      <button class="menu">Menu</button>
+    </header>
     <div class="winner hidden">
       <h1>You win!</h1>
     </div>
