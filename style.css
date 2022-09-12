@@ -8,6 +8,7 @@ body {
   padding: 0;
   overflow: hidden !important;
   font-family: "Press Start 2P", cursive;
+  position: relative;
 }
 
 .header {
@@ -38,15 +39,15 @@ h2 {
 .level {
   width: 13rem;
 }
-
-.menu {
+/* MENU BTN */
+.menu-btn {
   font-size: 3.2rem;
   border: none;
   background-color: transparent;
   font-family: inherit;
 }
 
-.menu:hover {
+.menu-btn:hover {
   text-transform: uppercase;
   border: solid 1rem #920608;
   background-color: #920608;
@@ -54,6 +55,23 @@ h2 {
   transform: scale(1.2);
   transition: 0.12s;
   border-radius: 1rem;
+  cursor: pointer;
+}
+
+/* START BTN */
+.start-btn {
+  width: 20rem;
+  height: 10rem;
+  background-color: #920608;
+
+  color: #fff;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 3.2rem;
+  font-family: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
 }
 
