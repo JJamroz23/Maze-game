@@ -28,12 +28,12 @@ nextBtn.addEventListener("click", (event) => {
   location.reload();
 });
 
-let interval;
 // TIMER START
 const timerStart = () => {
-  interval = setInterval(() => {
-    let timeLeft = timer.innerHTML;
+  timer.innerHTML = timer.innerHTML - 1;
 
+  const interval = setInterval(() => {
+    let timeLeft = timer.innerHTML;
     if (timeLeft > 0) {
       timer.innerHTML = timeLeft - 1;
     } else {
