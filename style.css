@@ -59,7 +59,8 @@ h2 {
 }
 
 /* START BTN */
-.start-btn {
+.start-btn,
+.next {
   width: 20rem;
   height: 10rem;
   background-color: #920608;
