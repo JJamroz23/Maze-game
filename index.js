@@ -1,9 +1,9 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 // calculate difficulty based on current level
-const levelRate = Math.ceil(levelValueStorage * 2.25);
-const cellsHorizontal = 2 + levelRate;
-const cellsVertical = 3 + levelRate;
+const levelRate = Math.ceil(levelValueStorage * 0.75);
+const cellsHorizontal = 3 + levelRate;
+const cellsVertical = 4 + levelRate;
 const width = window.innerWidth;
 const height = window.innerHeight * 0.9;
 

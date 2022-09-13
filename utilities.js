@@ -78,12 +78,12 @@ const winnerMeassage = () => {
   setTimeout(() => {
     document.querySelector(".winner").classList.add("hidden");
     nextBtn.classList.remove("hidden");
-  }, 7000);
+  }, 4000);
 };
 
-//// GAME MOVEMENT  ////
+/////// GAME MOVEMENT  //////
 
-// TIMER START
+// Timer start
 let timeLeft;
 let interval;
 const timerStart = () => {
@@ -100,7 +100,7 @@ const timerStart = () => {
   }, 1000);
 };
 
-// TIMER STOP
+// Timer stop
 const timerStop = () => {
   clearInterval(interval);
 };
