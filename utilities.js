@@ -16,8 +16,10 @@ const setLSItem = (key, value) => {
 const startBtn = document.querySelector(".start-btn");
 const nextBtn = document.querySelector(".next");
 const overBtn = document.querySelector(".over-btn");
+const menuBtn = document.querySelector(".menu-btn");
 // Inputs
 const timer = document.querySelector(".timer");
+const menuContainer = document.querySelector(".menu-container");
 const scoreBoard = document.querySelector(".scoreboard");
 const levelElement = document.querySelector(".level");
 levelElement.innerHTML = levelValueStorage;
@@ -38,6 +40,15 @@ nextBtn.addEventListener("click", (event) => {
 // game over button
 overBtn.addEventListener("click", (event) => {
   newGame();
+});
+
+// menu button
+menuBtn.addEventListener("click", (event) => {
+  if (menuContainer.classList.contains("hidden")) {
+    menuContainer.classList.remove("hidden");
+  } else {
+    menuContainer.classList.add("hidden");
+  }
 });
 
 // after win message
