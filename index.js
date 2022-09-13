@@ -1,7 +1,7 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cellsHorizontal = 4;
-const cellsVertical = 3;
+const cellsHorizontal = 5;
+const cellsVertical = 5;
 const width = window.innerWidth;
 const height = window.innerHeight * 0.9;
 
@@ -246,6 +246,7 @@ Events.on(engine, "collisionStart", (event) => {
       labels.includes(collision.bodyB.label)
     ) {
       winnerMeassage();
+      saveLevel();
       world.gravity.y = 1;
       world.bodies.forEach((body) => {
         if (body.label === "wall") {
