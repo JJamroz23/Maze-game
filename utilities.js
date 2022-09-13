@@ -89,7 +89,7 @@ const timerStart = () => {
     if (timeLeft > 0) {
       timer.innerHTML = timeLeft - 1;
     } else {
-      document.querySelector(".over-btn").classList.remove("hidden");
+      overBtn.classList.remove("hidden");
       clearInterval(interval);
     }
   }, 1000);
