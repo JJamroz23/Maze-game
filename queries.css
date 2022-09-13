@@ -1,0 +1,47 @@
+/***************************/
+/* BELOW 1270px  (Smaller desktops) */
+/***************************/
+
+@media (max-width: 80em) {
+  .header {
+    gap: 0rem;
+  }
+  .property-box {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  #menu-btn {
+    font-size: 2.4rem;
+  }
+}
+
+/***************************/
+/* BELOW 1000px   */
+/***************************/
+@media (max-width: 62.5em) {
+  .header {
+    height: 20vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #menu-btn {
+    display: inline-block;
+    width: max-content;
+    justify-self: end;
+    margin-right: 2rem;
+  }
+  .timer,
+  .scoreboard,
+  .level {
+    width: auto;
+  }
+
+  .query-box {
+    justify-self: end;
+    margin-right: 2rem;
+  }
+}
