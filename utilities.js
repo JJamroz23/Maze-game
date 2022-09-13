@@ -17,9 +17,13 @@ const startBtn = document.querySelector(".start-btn");
 const nextBtn = document.querySelector(".next");
 const overBtn = document.querySelector(".over-btn");
 const menuBtn = document.querySelector(".menu-btn");
+const newBtn = document.querySelector(".new");
+const instBtn = document.querySelector(".inst");
+const instBackBtn = document.querySelector(".inst-back");
 // Inputs
 const timer = document.querySelector(".timer");
 const menuContainer = document.querySelector(".menu-container");
+const instContainer = document.querySelector(".inst-container");
 const scoreBoard = document.querySelector(".scoreboard");
 const levelElement = document.querySelector(".level");
 levelElement.innerHTML = levelValueStorage;
@@ -40,6 +44,23 @@ nextBtn.addEventListener("click", (event) => {
 // game over button
 overBtn.addEventListener("click", (event) => {
   newGame();
+});
+
+// new game button
+newBtn.addEventListener("click", (event) => {
+  newGame();
+});
+
+// instruction button
+instBtn.addEventListener("click", (event) => {
+  if (instContainer.classList.contains("hidden")) {
+    instContainer.classList.remove("hidden");
+  }
+});
+
+// go back button
+instBackBtn.addEventListener("click", (event) => {
+  instContainer.classList.add("hidden");
 });
 
 // menu button
