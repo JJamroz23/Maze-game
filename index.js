@@ -247,6 +247,7 @@ Events.on(engine, "collisionStart", (event) => {
       labels.includes(collision.bodyA.label) &&
       labels.includes(collision.bodyB.label)
     ) {
+      timerStop();
       winnerMeassage();
       saveLevel();
       saveScore();

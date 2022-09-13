@@ -48,10 +48,11 @@ const winnerMeassage = () => {
 
 // TIMER START
 let timeLeft;
+let interval;
 const timerStart = () => {
   timer.innerHTML = timer.innerHTML - 1;
 
-  const interval = setInterval(() => {
+  interval = setInterval(() => {
     timeLeft = timer.innerHTML;
     if (timeLeft > 0) {
       timer.innerHTML = timeLeft - 1;
@@ -79,5 +80,5 @@ const saveLevel = () => {
 
 // score value upgrade
 const saveScore = () => {
-  setLSItem("score", scoreValueStorage + timeLeft);
+  setLSItem("score", scoreValueStorage + parseFloat(timeLeft));
 };
