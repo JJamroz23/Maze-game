@@ -60,7 +60,8 @@ h2 {
 
 /* START BTN */
 .start-btn,
-.next {
+.next,
+.over-btn {
   width: 20rem;
   height: 10rem;
   background-color: #920608;

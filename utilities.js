@@ -15,7 +15,7 @@ const setLSItem = (key, value) => {
 // Buttons
 const startBtn = document.querySelector(".start-btn");
 const nextBtn = document.querySelector(".next");
-
+const overBtn = document.querySelector(".over-btn");
 // Inputs
 const timer = document.querySelector(".timer");
 const scoreBoard = document.querySelector(".scoreboard");
@@ -30,9 +30,14 @@ startBtn.addEventListener("click", (event) => {
   timerStart();
 });
 
-// next game start
+// next level button
 nextBtn.addEventListener("click", (event) => {
   location.reload();
+});
+
+// game over button
+overBtn.addEventListener("click", (event) => {
+  newGame();
 });
 
 // after win message
@@ -57,6 +62,7 @@ const timerStart = () => {
     if (timeLeft > 0) {
       timer.innerHTML = timeLeft - 1;
     } else {
+      document.querySelector(".over-btn").classList.remove("hidden");
       clearInterval(interval);
     }
   }, 1000);
