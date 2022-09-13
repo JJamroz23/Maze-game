@@ -1,7 +1,7 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 // calculate difficulty based on current level
-const levelRate = Math.ceil(levelValueStorage * 0.75);
+const levelRate = Math.ceil(level * 0.75);
 const cellsHorizontal = 3 + levelRate;
 const cellsVertical = 4 + levelRate;
 const width = window.innerWidth;
@@ -217,22 +217,22 @@ const ball = Bodies.circle(unitLengthX / 2, unitLengthY / 2, ballRadius, {
 World.add(world, ball);
 
 //Keypresses
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", ({ key }) => {
   const { x, y } = ball.velocity;
   const speedLimit = 15;
-  if (event.keyCode === 87 || event.keyCode === 38) {
+  if (key === "w" || key === "ArrowUp") {
     Body.setVelocity(ball, { x, y: Math.max(y - 4, -speedLimit) });
   }
 
-  if (event.keyCode === 68 || event.keyCode === 39) {
+  if (key === "d" || key === "ArrowRight") {
     Body.setVelocity(ball, { x: Math.min(x + 4, speedLimit), y });
   }
 
-  if (event.keyCode === 83 || event.keyCode === 40) {
+  if (key === "s" || key === "ArrowDown") {
     Body.setVelocity(ball, { x, y: Math.min(y + 4, speedLimit) });
   }
 
-  if (event.keyCode === 65 || event.keyCode === 37) {
+  if (key === "a" || key === "ArrowLeft") {
     Body.setVelocity(ball, { x: Math.max(x - 4, -speedLimit), y });
   }
 });

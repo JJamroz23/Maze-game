@@ -35,8 +35,25 @@ h2 {
 .level {
   width: 13rem;
 }
+
+/* BUTTON */
+.button {
+  background-color: #920608;
+  color: #fff;
+  text-transform: uppercase;
+  border: 0.5rem solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.button:hover {
+  color: #920608;
+  background-color: white;
+  border: 0.5rem solid #920608;
+}
+
 /* MENU BTN */
-.menu-btn {
+#menu-btn {
   font-size: 3.2rem;
   border: none;
   background-color: transparent;
@@ -45,7 +62,7 @@ h2 {
   padding: 1rem;
 }
 
-.menu-btn:hover {
+#menu-btn:hover {
   text-transform: uppercase;
   background-color: #fff;
   color: #920608;
@@ -89,56 +106,28 @@ h2 {
   font-size: 2.4rem;
 }
 
-.inst-back {
+#inst-back {
   font-size: 2rem;
-  font-family: inherit;
   padding: 3rem 5rem;
-  text-transform: uppercase;
-  background-color: #920608;
-  color: #fff;
-  cursor: pointer;
-  border: 0.5rem solid transparent;
-}
-
-.inst-back:hover {
-  color: #920608;
-  background-color: white;
-  border: 0.5rem solid #920608;
 }
 
 .menu-list {
   width: 30rem;
   padding: 3rem 5rem;
-  background-color: #920608;
-  color: #fff;
-  cursor: pointer;
-  text-transform: uppercase;
   font-size: 2rem;
-  font-family: inherit;
-  border: 0.5rem solid transparent;
-}
-.menu-list:hover {
-  color: #920608;
-  background-color: white;
-  border: 0.5rem solid #920608;
 }
 
-/* START BTN */
-.start-btn,
-.next,
-.over-btn {
+/* START BTN, NEXT BTN, GAME OVER BTN */
+#start-btn,
+#next,
+#over-btn {
   width: 20rem;
   height: 10rem;
-  background-color: #920608;
-  color: #fff;
   position: absolute;
-  text-transform: uppercase;
   font-size: 3.2rem;
-  font-family: inherit;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  cursor: pointer;
 }
 
 .hidden {

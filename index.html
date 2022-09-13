@@ -28,14 +28,14 @@
         <h2>Level:</h2>
         <div class="level"></div>
       </div>
-      <button class="menu-btn">Menu</button>
+      <button id="menu-btn">Menu</button>
     </header>
 
     <!-- Menu container -->
     <div class="menu-container hidden">
       <div class="box">
-        <button class="menu-list new">new game</button>
-        <button class="menu-list inst">instruction</button>
+        <button id="new" class="menu-list button">new game</button>
+        <button id="inst" class="menu-list button">instruction</button>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
         <p>D or ArrowRight - RIGHT</p>
         <p>S or ArrowDown - DOWN</p>
         <p>A or ArrowLeft - LEFT</p>
-        <button class="inst-back">go back</button>
+        <button id="inst-back" class="button">go back</button>
       </div>
     </div>
     <!-- win button -->
@@ -54,13 +54,13 @@
       <h1>Congratulations, You win!</h1>
     </div>
     <!-- start button -->
-    <button class="start-btn">game<br />start</button>
+    <button id="start-btn" class="button">game<br />start</button>
 
     <!-- next game button -->
-    <button class="next hidden" id="next">Next Round</button>
+    <button class="button hidden" id="next">Next Round</button>
 
     <!-- game over button -->
-    <button class="over-btn hidden">game over</button>
+    <button id="over-btn" class="button hidden">game over</button>
     <script src="utilities.js"></script>
     <script src="index.js"></script>
   </body>
