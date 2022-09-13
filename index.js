@@ -1,7 +1,9 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cellsHorizontal = 5;
-const cellsVertical = 5;
+// calculate difficulty based on current level
+const levelRate = Math.ceil(levelValueStorage * 2.25);
+const cellsHorizontal = 2 + levelRate;
+const cellsVertical = 3 + levelRate;
 const width = window.innerWidth;
 const height = window.innerHeight * 0.9;
 
@@ -247,6 +249,7 @@ Events.on(engine, "collisionStart", (event) => {
     ) {
       winnerMeassage();
       saveLevel();
+      saveScore();
       world.gravity.y = 1;
       world.bodies.forEach((body) => {
         if (body.label === "wall") {

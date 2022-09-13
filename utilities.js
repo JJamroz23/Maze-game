@@ -1,11 +1,11 @@
 ///////// LOCAL STORAGE //////
 
-const scoreStorage = Number(localStorage.getItem("scoreBoard"));
+const scoreValueStorage = Number(localStorage.getItem("score")) || 0;
 const levelValueStorage = Number(localStorage.getItem("level")) || 1;
 
 const setLSItem = (key, value) => {
-  if (key === "scoreBoard") {
-    localStorage.setItem("scoreBoard", value);
+  if (key === "score") {
+    localStorage.setItem("score", value);
   }
   if (key === "level") {
     localStorage.setItem("level", value);
@@ -21,6 +21,7 @@ const timer = document.querySelector(".timer");
 const scoreBoard = document.querySelector(".scoreboard");
 const levelElement = document.querySelector(".level");
 levelElement.innerHTML = levelValueStorage;
+scoreBoard.innerHTML = scoreValueStorage;
 
 // Start button
 startBtn.addEventListener("click", (event) => {
@@ -46,11 +47,12 @@ const winnerMeassage = () => {
 //// GAME MOVEMENT  ////
 
 // TIMER START
+let timeLeft;
 const timerStart = () => {
   timer.innerHTML = timer.innerHTML - 1;
 
   const interval = setInterval(() => {
-    let timeLeft = timer.innerHTML;
+    timeLeft = timer.innerHTML;
     if (timeLeft > 0) {
       timer.innerHTML = timeLeft - 1;
     } else {
@@ -73,4 +75,9 @@ const newGame = () => {
 //  level value upgrade
 const saveLevel = () => {
   setLSItem("level", levelValueStorage + 1);
+};
+
+// score value upgrade
+const saveScore = () => {
+  setLSItem("score", scoreValueStorage + timeLeft);
 };
